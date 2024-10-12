@@ -64,7 +64,7 @@ func GetDictionary(word string) ([]Result, error) {
 	//validate input
 	var validWord = regexp.MustCompile(`^[a-zA-Z]+$`)
 	if !validWord.MatchString(word) {
-		return []Result{}, errors.New("input invalid, pleas try again to input only English")
+		return []Result{}, errors.New("input invalid, input English only")
 	}
 
 	url := fmt.Sprintf("https://api.dictionaryapi.dev/api/v2/entries/en/%s", word)
